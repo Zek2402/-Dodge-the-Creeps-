@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://btfjo3rre4qy0"]
+[gd_scene load_steps=10 format=3 uid="uid://btfjo3rre4qy0"]
 
 [ext_resource type="Texture2D" uid="uid://didxb170ltqgc" path="res://art/enemyFlyingAlt_1.png" id="1_74ua2"]
+[ext_resource type="Script" path="res://mob.gd" id="1_kehl7"]
 [ext_resource type="Texture2D" uid="uid://deh1nacqpi3on" path="res://art/enemyFlyingAlt_2.png" id="2_nmo3a"]
 [ext_resource type="Texture2D" uid="uid://7ah7ump8u8rv" path="res://art/enemySwimming_1.png" id="3_0fqx2"]
 [ext_resource type="Texture2D" uid="uid://gynrl0h2iosl" path="res://art/enemySwimming_2.png" id="4_k258g"]
@@ -47,15 +48,17 @@ animations = [{
 radius = 58.0
 height = 120.0
 
-[node name="Mob" type="RigidBody2D"]
+[node name="Mob" type="RigidBody2D" groups=["mobs"]]
 collision_mask = 0
 gravity_scale = 0.0
+script = ExtResource("1_kehl7")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_4yufu")
-animation = &"fly"
+animation = &"walk"
+frame_progress = 0.742844
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 0)
